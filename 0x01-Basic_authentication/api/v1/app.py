@@ -5,7 +5,6 @@ from api.v1.views import app_views
 from flask import Flask, jsonify, abort, request
 from flask_cors import (CORS, cross_origin)
 import os
-api.v1.auth.basic_auth import BasicAuth
 
 
 app = Flask(__name__)
@@ -17,7 +16,7 @@ if AUTH_TYPE == "auth":
     from api.v1.auth.auth import Auth
     auth = Auth()  # otherwise '6'
 elif AUTH_TYPE == "basic_auth":
-    from api.v1.auth.basic_auth import BasicAuth
+    from api.v1.auth.basic_auth import BasicAuth  # 'task6'
     auth = BasicAuth()  # instance of BasicAuth 'task 6'
 
 
